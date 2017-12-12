@@ -14,7 +14,7 @@
 </head>
 <body>
 
-  <h1>Number to Guess: <span id="number-to-guess"></span></h1>
+  <h1>Number to beat: <span id="random-number"></span></h1>
 
   <!-- Note that this div is now empty. We will fill it dynamically -->
   <div id="crystals"></div>
@@ -28,22 +28,23 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
   <script type="text/javascript">
-    var targetNumber= 53;
+    var targetNumber= 0;
     var counter = 0;
     var numberOptions = [];
     var imageCrystal = 0;
     var crystalValue = 0;
     var wins = 0;
     var losses = 0;
-
+    // var numberOptions = [0, 0, 0, 0];
  
   
 
   function startGame() {
     $( "#crystals" ).empty();
-    var targetNumber = 53;
+    targetNumber = Math.floor(Math.random() * 120) + 19;
+    console.log(targetNumber);
 
-    $("#number-to-guess").text(targetNumber);
+    $("#random-number").text(targetNumber);
 
     var counter = 0;
     $("#number").text(counter);
@@ -54,8 +55,13 @@
     // Now for the hard part. Creating multiple crystals each with their own unique number value.
 
     // We begin by expanding our array to include four options.
-    var numberOptions = [10, 5, 3, 7];
-
+    
+    //we want to pick a number for each of the crystals
+    // for (var i = 0; i < nunberOptions.length; i++) {
+    //   crystalNumber[i] = Math.floor(Math.random()*12 + 1);
+    //   console.log("crystal number 1: " + crystalNumber[i]);
+    // }
+    var numberOptions = [1, 10, 5, 3];
     // Next we create a for loop to create crystals for every numberOption.
     for (var i = 0; i < numberOptions.length; i++) {
 
