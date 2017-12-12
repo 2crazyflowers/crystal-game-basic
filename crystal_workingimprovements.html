@@ -35,8 +35,8 @@
     var crystalValue = 0;
     var wins = 0;
     var losses = 0;
-    // var numberOptions = [0, 0, 0, 0];
- 
+    // var numberOptions.length = 4;
+    //this var does not work yet
   
 
   function startGame() {
@@ -57,13 +57,14 @@
     // We begin by expanding our array to include four options.
     
     //we want to pick a number for each of the crystals
-    // for (var i = 0; i < nunberOptions.length; i++) {
-    //   crystalNumber[i] = Math.floor(Math.random()*12 + 1);
-    //   console.log("crystal number 1: " + crystalNumber[i]);
-    // }
-    var numberOptions = [1, 10, 5, 3];
+    for (var i = 0; i < 4; i++) {
+      numberOptions[i] = Math.floor(Math.random()*12 + 1);
+      console.log( "crystal number " + i + "is " + numberOptions[i] );
+    }
+
+    // var numberOptions = [1, 10, 5, 3];
     // Next we create a for loop to create crystals for every numberOption.
-    for (var i = 0; i < numberOptions.length; i++) {
+    for (var i = 0; i < 4; i++) {
 
       // For each iteration, we will create an imageCrystal
       var imageCrystal = $("<img>");
